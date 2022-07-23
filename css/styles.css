@@ -151,6 +151,8 @@ p {
 .header-contacts:hover,
 .header-contacts:focus {
   color: var(--main-link-cl);
+  transition: var(--transition-time);
+
 }
 
 .header-contacts:hover .header-icon,
@@ -223,6 +225,8 @@ p {
 .hero-btn:hover,
 .hero-btn:focus {
   background: var(--main-bt-bg-cl);
+    transition: var(--transition-time);
+
 }
 
 /* <!--------------------------- Особенности --------------------> */
@@ -373,6 +377,7 @@ p {
   color: var(--btn-txt-cl);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+    transition: var(--transition-time);
 }
 
 .portfolio-item-btn {
@@ -412,98 +417,43 @@ p {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-
-.portfolio-thumb{
-position: relative;
-overflow: hidden;
+.portfolio-thumb {
+  position: relative;
+  overflow: hidden;
 }
 
-.portfolio-overlay{
-position: absolute;
-top: 0;
-left: 0;
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
 
-transform: translateY(100%);
+  transform: translateY(100%);
 
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
 
   transition: transform var(--transition-time);
-background-color: rgba(33, 150, 243, 0.9);
-
-
+  background-color: rgba(33, 150, 243, 0.9);
 }
 
 .gallery-link:hover .portfolio-overlay {
   transform: translateY(0);
-
 }
 
-.portfolio-txt-overlay{
-font-weight: 400;
-font-size: 18px;
-line-height: 28px;
-letter-spacing: 0.03em;
+.portfolio-txt-overlay {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
 
-padding: 63px 24px;
+  padding: 63px 24px;
 
-
-color: var(--btn-txt-cl);
-
+  color: var(--btn-txt-cl);
 }
-
-/* це нове було але нижче */
-/* .portfolio-overlay {
-position: relative;
-} */
-
-/* це нове нижче але потім */
-/* .portfolio-overlay::before {
-position: absolute;
-display: inline-block;
-content: '';
-width: 100%;
-height: 100%;
-background-color: rgba(33, 150, 243, 0.9);
-
-opacity: 0;
-} */
-
-/* це старе було нижче */
-/* .portfolio-txt-overlay{
-  position: absolute;
-} */
-
-
-
-/* це нове нижче але потім */
-
-/* .portfolio-txt-overlay{
-position: absolute;
-top: 0;
-left: 0;
-
-display: flex;
-align-items: center;
-justify-content: center;
-
-padding: 63px 24px;
-
-font-weight: 400;
-font-size: 18px;
-line-height: 28px;
-letter-spacing: 0.03em;
-
-color: var(--btn-txt-cl);
-
-color: #000000;
-outline: 3px solid red;
-} */
 
 .gallery-wrapper {
   padding-top: 20px;
@@ -531,8 +481,6 @@ outline: 3px solid red;
 
 .customers-list {
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
   gap: 30px;
 }
 .customers-link {
@@ -555,6 +503,7 @@ outline: 3px solid red;
 .customers-link:hover,
 .customers-link:focus {
   border: 1px solid var(--main-link-cl);
+  transition: var(--transition-time);
 }
 
 .customers-link:hover .customers-icon,
@@ -604,6 +553,7 @@ outline: 3px solid red;
 .footer-item-map:hover,
 .footer-item-map:focus {
   color: var(--main-link-cl);
+  transition: var(--transition-time);
 }
 .second-footer-cl {
   color: var(--btn-txt-cl);
@@ -637,6 +587,7 @@ outline: 3px solid red;
 .footer-socials-link:hover,
 .footer-socials-link:focus {
   background-color: var(--main-link-cl);
+  transition: var(--transition-time);
 }
 
 /* ---------------------Socials------------------ */
@@ -666,6 +617,7 @@ outline: 3px solid red;
 .socials-link:focus {
   background-color: var(--main-link-cl);
   color: var(--btn-txt-cl);
+  transition: var(--transition-time);
 }
 
 .socials-link:hover .socials-icon,
@@ -683,19 +635,25 @@ outline: 3px solid red;
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.2);
+  
 }
 
-.backdrop.is-hidden{
+.backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
 .modal {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--transition-time);
 
   width: 528px;
   height: 581px;
@@ -706,7 +664,7 @@ outline: 3px solid red;
   border-radius: 4px;
 }
 
-.modal-btn{
+.modal-btn {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -725,4 +683,3 @@ outline: 3px solid red;
 
   cursor: pointer;
 }
-
