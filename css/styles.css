@@ -117,6 +117,8 @@ p {
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
   align-items: center;
+  transition: color var(--transition-time);
+
 }
 
 .header-link-current {
@@ -140,7 +142,6 @@ p {
 
 .header-icon {
   fill: currentColor;
-  cursor: pointer;
   margin-right: 10px;
 }
 
@@ -151,12 +152,11 @@ p {
 .header-contacts:hover,
 .header-contacts:focus {
   color: var(--main-link-cl);
-  transition: var(--transition-time);
 
 }
 
-.header-contacts:hover .header-icon,
-.header-contacts:focus .header-icon {
+.header-contacts:hover,
+.header-contacts:focus {
   fill: var(--main-link-cl);
 }
 
@@ -634,13 +634,17 @@ p {
   width: 100%;
   height: 100%;
 
+  opacity: 1;
+  visibility: visible;
+
+  transition: opacity var(--transition-time);
+
   background-color: rgba(0, 0, 0, 0.2);
   
 }
 
 .backdrop.is-hidden {
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
 }
 
